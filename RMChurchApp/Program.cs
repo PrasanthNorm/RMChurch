@@ -1,4 +1,7 @@
 
+using RMChurchApp.Data;
+using RMChurchApp.Data.Repositories;
+
 namespace RMChurchApp
 {
     public class Program
@@ -13,6 +16,10 @@ namespace RMChurchApp
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<IDBManager, DBManager>();
+            builder.Services.AddScoped<ChurchMemberRepository>();
+
+
 
             var app = builder.Build();
 

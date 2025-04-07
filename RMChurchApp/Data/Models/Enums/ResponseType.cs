@@ -1,4 +1,4 @@
-﻿namespace RMChurchApp.Enums
+﻿namespace RMChurchApp.Data.Models.Enums
 {
     public enum ResponseType
     {

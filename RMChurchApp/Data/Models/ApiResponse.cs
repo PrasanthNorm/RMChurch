@@ -1,6 +1,6 @@
-﻿using RMChurchApp.Enums;
+﻿using RMChurchApp.Data.Models.Enums;
 
-namespace RMChurchApp.Models
+namespace RMChurchApp.Data.Models
 {
     public class ApiResponse<T>
     {

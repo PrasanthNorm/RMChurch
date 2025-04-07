@@ -1,4 +1,5 @@
 ﻿using RMChurchApp.Data.Models.Enums;
+using System.Text.Json.Serialization;
 
 namespace RMChurchApp.Data.Models
 {
@@ -8,7 +9,13 @@ namespace RMChurchApp.Data.Models
         public string Message { get; set; }
         public T Data { get; set; }
         public int StatusCode { get; set; }
+
+        [JsonIgnore] // Prevent enum from being serialized
         public ResponseType ResponseType { get; set; }
+
+        // This will be serialized as responseType in JSON
+        [JsonPropertyName("responseType")]
+        public string ResponseTypeString => ResponseType.ToString().ToLower();
 
         public ApiResponse() { }
 
